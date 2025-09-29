@@ -16,14 +16,12 @@ submitting it for review.
 
 
  1) Write down the names of the 6 major primitive types available in C++  here:
-
-
-
-
-
-
-
-
+1) int
+2) bool
+3) float
+4) char
+5) double
+6) Wchar_t
 
 
 2) for each primitive type, write out 3 variable declarations inside the
@@ -68,12 +66,34 @@ the 'auto' keyword. c) pass the local variables to ignoreUnused() as you did in
 // 2)
 void variableDeclarations() {
   // example:
-  int number =
-      2; // declaration of a variable named "number", that uses the primitive
-         // type 'int', and the variable's initial value is '2'
+    int number = 2; // declaration of a variable named "number", that uses the                      //primitive
+                  // type 'int', and the variable's initial value is '2'
+    int number2 = 1; //type 'int'
+    int number3 = 3; //type 'int'
+
+    //boolean type
+    bool isTrue = false; //type 'bool'  
+    bool isOpen = false; //type 'bool'.
+    bool isPlaying = 1; // type 'bool' 1 = true 0 = false
+
+    //floating-point type 6 decimial places
+    float decimal = 1.1f; //type 'float'
+    float pi = 3.141593f; //type 'float'
+    float e = 2.71f; //type 'float'
+
+    //character type
+    char letter = 'a'; //type 'char'
+    char letB = 'b'; //type 'char'
+    char character = 'c'; //type 'char'
+
+    //double type 15 decimal places
+    double piDouble =  3.141592653589793; //type 'double'
+    double eDouble =   2.718281828459045; //type 'double'
+    double numDouble = 1.111111111111111; //type 'double'
+    
 
   ignoreUnused(
-      number); // passing each variable declared to the ignoreUnused() function
+      number, number2, number3, isTrue, isOpen, isPlaying, decimal, pi, e, letter, letB, character, piDouble, eDouble, numDouble); // passing each variable declared to the ignoreUnused() function
 }
 
 /*
