@@ -1,7 +1,6 @@
 #include <iostream>
 
-template<typename ...T>
-void ignoreUnused(T&&...) { }
+template <typename... T> void ignoreUnused(T &&...) {}
 
 /*
 Project 2 - Part 1 / 1
@@ -10,158 +9,290 @@ video: Chapter 2 - Part 3
 
  Create a branch named Part1
 
- Purpose:  This project will teach you how to declare variables and free functions.  
- This will be the first project where the code you write will be compiled and you will be responsible for making sure it compiles before submitting it for review.
- 
- 
+ Purpose:  This project will teach you how to declare variables and free
+functions. This will be the first project where the code you write will be
+compiled and you will be responsible for making sure it compiles before
+submitting it for review.
+
+
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
-    a) give each variable declaration an initial value
-        - just ignore wchar_t. you do not need to declare 3 variables of type 'wchar_t'
-        - 'void' is a return type. you do not need to declare 3 variables of type 'void'.
-    b) at the end of the function, call ignoreUnused once and pass all of your variables to it. see line 71 for an example
- 
+1) int
+2) bool
+3) float
+4) char
+5) double
+6) Wchar_t
+
+
+2) for each primitive type, write out 3 variable declarations inside the
+variableDeclaration() function on line 59. a) give each variable declaration an
+initial value
+        - just ignore wchar_t. you do not need to declare 3 variables of type
+'wchar_t'
+        - 'void' is a return type. you do not need to declare 3 variables of
+type 'void'. b) at the end of the function, call ignoreUnused once and pass all
+of your variables to it. see line 71 for an example
+
 3) Declare 10 free functions
-    each declaration should have a random number of parameters in the function parameter list.
-    When naming your parameters, choose names that are relevant to the task implied by the function's name.
-    remember:
-    Name functions what they do
+    each declaration should have a random number of parameters in the function
+parameter list. When naming your parameters, choose names that are relevant to
+the task implied by the function's name. remember: Name functions what they do
         takeDogForWalk(int distanceInYards);
     Name variables what they are.
         int numStepsSinceStart;
 
-4) add { ignoreUnused( ); } after each declaration in place of the closing semicolon
-5) pass each of your function parameters to the ignoreUnused function like you did in b)
-6) if your function returns something other than void, add 'return { };' at the end of it.
-7) provide default values for an arbitrary number of parameters in the function parameter list.
+4) add { ignoreUnused( ); } after each declaration in place of the closing
+semicolon 5) pass each of your function parameters to the ignoreUnused function
+like you did in b) 6) if your function returns something other than void, add
+'return { };' at the end of it. 7) provide default values for an arbitrary
+number of parameters in the function parameter list.
 
-8) consult the coding style guide found in the Readme.MD and adjust the formatting of your 10 functions.  At this point, you might have something that looks like this:
-    float someFunc2(bool yes, int bar=2) { ignoreUnused(yes, bar ); return { }; }
-    This does not conform with the coding standard for this course (check the Readme.MD) and needs to be corrected
-    
-9) in the main function at the end: 
-    for each of those functions declared, 
-        a) write out how the function would look if called with correct arguments
-        b) if the function returned anything, store it in a local variable via the 'auto' keyword.
-        c) pass the local variables to ignoreUnused() as you did in 2b)
-    see main() for an example of this.
- 
+8) consult the coding style guide found in the Readme.MD and adjust the
+formatting of your 10 functions.  At this point, you might have something that
+looks like this: float someFunc2(bool yes, int bar=2) { ignoreUnused(yes, bar );
+return { }; } This does not conform with the coding standard for this course
+(check the Readme.MD) and needs to be corrected
+
+9) in the main function at the end:
+    for each of those functions declared,
+        a) write out how the function would look if called with correct
+arguments b) if the function returned anything, store it in a local variable via
+the 'auto' keyword. c) pass the local variables to ignoreUnused() as you did in
+2b) see main() for an example of this.
+
 10) click the [run] button.  Clear up any errors or warnings as best you can.
  */
 
-//2)
-void variableDeclarations()
-{
-    //example:
-    int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+// 2)
+void variableDeclarations() {
+  // example:
+    int number = 2; // declaration of a variable named "number", that uses the                      //primitive
+                  // type 'int', and the variable's initial value is '2'
+    int number2 = 1; //type 'int'
+    int number3 = 3; //type 'int'
+
+    //boolean type
+    bool isTrue = false; //type 'bool'  
+    bool isOpen = false; //type 'bool'.
+    bool isPlaying = 1; // type 'bool' 1 = true 0 = false
+
+    //floating-point type 6 decimial places
+    float decimal = 1.1f; //type 'float'
+    float pi = 3.141593f; //type 'float'
+    float e = 2.71f; //type 'float'
+
+    //character type
+    char letter = 'a'; //type 'char'
+    char letB = 'b'; //type 'char'
+    char character = 'c'; //type 'char'
+
+    //double type 15 decimal places
+    double piDouble =  3.141592653589793; //type 'double'
+    double eDouble =   2.718281828459045; //type 'double'
+    double numDouble = 1.111111111111111; //type 'double'
     
 
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+  ignoreUnused(
+      number, number2, number3, isTrue, isOpen, isPlaying, decimal, pi, e, letter, letB, character, piDouble, eDouble, numDouble); // passing each variable declared to the ignoreUnused() function
 }
+
 
 /*
  10 functions
  example:
  note: this example shows the result after completing steps 3-8
  */
-bool rentACar(int rentalDuration, int carType = 0)  //function declaration with random number of arguments, arbitrary number of arguments have default value
-{ 
-    ignoreUnused(rentalDuration, carType); //passing each function parameter to the ignoreUnused() function
-    return {}; //if your function returns something other than void, add 'return {};' at the end of it.
-} 
+bool rentACar(
+    int rentalDuration,
+    int carType = 0) // function declaration with random number of arguments,
+                     // arbitrary number of arguments have default value
+{
+  ignoreUnused(rentalDuration, carType); // passing each function parameter to
+                                         // the ignoreUnused() function
+  return {}; // if your function returns something other than void, add 'return
+             // {};' at the end of it.
+}
 
-/*
- 1)
- */
+// 1)
+bool isNumber (
+    int num) 
+{
+    ignoreUnused(num);
 
-/*
- 2)
- */
+    return {};
 
-/*
- 3)
- */
+}
 
-/*
- 4)
- */
 
-/*
- 5)
- */
+// 2) 
+int calculateArea (
+    int length,
+    int width = 10)
+{
+    ignoreUnused(length, width);
 
-/*
- 6)
- */
+    return {};
+}
 
-/*
- 7)
- */
 
-/*
- 8)
- */
 
-/*
- 9)
- */
+// 3) 
+char getFirstLetter (
+    char a)
+{
+    ignoreUnused(a);
 
-/*
- 10)
- */
+    return {};   
+}
+
+// 4)
+float calculateCircumference (
+    float radius,
+    float pi = 3.141593f)
+{
+
+    ignoreUnused(radius, pi);
+
+    return {}; 
+}
+
+// 5)
+float getRadius (
+    float enterRadius)
+{
+
+    ignoreUnused(enterRadius);
+
+    return {}; 
+    
+}
+
+// 6)
+bool isEven (
+    int num)
+{
+
+    ignoreUnused(num);
+
+    return {}; 
+
+}
+
+
+// 7)
+double evaluateExpression (
+    double num1, 
+    double num2)
+{
+
+    ignoreUnused(num1, num2);
+
+    return {}; 
+}
+
+
+// 8)
+bool isDogBarking (
+    bool isDogAwake)
+{
+    ignoreUnused(isDogAwake);
+
+    return {}; 
+}
+
+// 9)
+int getNumberOfDays (
+    int month, 
+    int days)
+{
+    ignoreUnused(month, days);
+
+    return {}; 
+}
+
+// 10)
+char lastChar (
+    char letZ)
+
+{
+    ignoreUnused(letZ);
+
+    return {}; 
+}
+
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
- Commit your changes by clicking on the Source Control panel on the left, entering a message, and click [Commit and push].
- 
- If you didn't already: 
+ Commit your changes by clicking on the Source Control panel on the left,
+ entering a message, and click [Commit and push].
+
+ If you didn't already:
     Make a pull request after you make your first commit
-    pin the pull request link and this repl.it link to our DM thread in a single message.
+    pin the pull request link and this repl.it link to our DM thread in a single
+ message.
 
  send me a DM to review your pull request when the project is ready for review.
 
  Wait for my code review.
  */
 
-int main()
-{
-    //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
-    auto carRented = rentACar(6, 2); 
+int main() {
+  // example of calling that function, storing the value, and passing it to
+  // ignoreUnused at the end of main()
+  auto carRented = rentACar(6, 2);
+
+  // 1)
+    auto boolNum = isNumber (1);
+
+  // 2)
+    auto lengthNumber = calculateArea (15);
+  
+  // 3)
+    auto firstLetter = getFirstLetter ('a');
     
-    //1)
+  // 4)
+    auto radiusNumber = calculateCircumference (12.5f);
     
-    //2)
+  // 5)
+    auto radiusInput = getRadius (8.15f);
     
-    //3)
+  // 6)
+    auto evenNumber = isEven (0);
     
-    //4)
+  // 7)
+    auto numDoubleInput = evaluateExpression (2.2222222222, 3.333333333333);
     
-    //5)
+  // 8)
+    auto didDogWakeUp = isDogBarking (true);
     
-    //6)
-    
-    //7)
-    
-    //8)
-    
-    //9)
-    
-    //10)
-    
-    
-    ignoreUnused(carRented);
-    std::cout << "good to go!" << std::endl;
-    return 0;    
+  // 9)
+    auto daysInput = getNumberOfDays (10, 2);
+
+  // 10)
+    auto lastLetter = lastChar('z');
+
+  ignoreUnused(carRented);
+  std::cout << "good to go!" << std::endl;
+  ignoreUnused(boolNum);
+  std::cout << "good to go #1!" << std::endl;
+  ignoreUnused(lengthNumber);
+  std::cout << "good to go #2!" << std::endl;
+  ignoreUnused(firstLetter);
+  std::cout << "good to go #3!" << std::endl;
+  ignoreUnused(radiusNumber);
+  std::cout << "good to go #4!" << std::endl;
+  ignoreUnused(radiusInput);
+  std::cout << "good to go #5!" << std::endl;
+  ignoreUnused(evenNumber);
+  std::cout << "good to go #6!" << std::endl;
+  ignoreUnused(numDoubleInput);
+  std::cout << "good to go #7!" << std::endl;
+  ignoreUnused(didDogWakeUp);
+  std::cout << "good to go #8!" << std::endl;
+  ignoreUnused(daysInput);
+  std::cout << "good to go #9!" << std::endl;
+  ignoreUnused(lastLetter);
+  std::cout << "good to go #10!" << std::endl;
+  return 0;
 }
