@@ -96,6 +96,7 @@ void variableDeclarations() {
       number, number2, number3, isTrue, isOpen, isPlaying, decimal, pi, e, letter, letB, character, piDouble, eDouble, numDouble); // passing each variable declared to the ignoreUnused() function
 }
 
+
 /*
  10 functions
  example:
@@ -155,6 +156,7 @@ float calculateCircumference (
     return {}; 
 }
 
+// 5)
 float getRadius (
     float enterRadius)
 {
@@ -165,7 +167,7 @@ float getRadius (
     
 }
 
-// 5)
+// 6)
 bool isEven (
     int num)
 {
@@ -177,7 +179,7 @@ bool isEven (
 }
 
 
-// 6)
+// 7)
 double evaluateExpression (
     double num1, 
     double num2)
@@ -189,26 +191,35 @@ double evaluateExpression (
 }
 
 
+// 8)
+bool isDogBarking (
+    bool isDogAwake)
+{
+    ignoreUnused(isDogAwake);
 
+    return {}; 
+}
 
+// 9)
+int getNumberOfDays (
+    int month, 
+    int days)
+{
+    ignoreUnused(month, days);
 
- 
+    return {}; 
+}
 
-/*
- 7)
- */
+// 10)
+char lastChar (
+    char letZ)
 
-/*
- 8)
- */
+{
+    ignoreUnused(letZ);
 
-/*
- 9)
- */
+    return {}; 
+}
 
-/*
- 10)
- */
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -232,26 +243,56 @@ int main() {
   auto carRented = rentACar(6, 2);
 
   // 1)
+    auto boolNum = isNumber (1);
 
   // 2)
-
+    auto lengthNumber = calculateArea (15);
+  
   // 3)
-
+    auto firstLetter = getFirstLetter ('a');
+    
   // 4)
-
+    auto radiusNumber = calculateCircumference (12.5f);
+    
   // 5)
-
+    auto radiusInput = getRadius (8.15f);
+    
   // 6)
-
+    auto evenNumber = isEven (0);
+    
   // 7)
-
+    auto numDoubleInput = evaluateExpression (2.2222222222, 3.333333333333);
+    
   // 8)
-
+    auto didDogWakeUp = isDogBarking (true);
+    
   // 9)
+    auto daysInput = getNumberOfDays (10, 2);
 
   // 10)
+    auto lastLetter = lastChar('z');
 
   ignoreUnused(carRented);
   std::cout << "good to go!" << std::endl;
+  ignoreUnused(boolNum);
+  std::cout << "good to go #1!" << std::endl;
+  ignoreUnused(lengthNumber);
+  std::cout << "good to go #2!" << std::endl;
+  ignoreUnused(firstLetter);
+  std::cout << "good to go #3!" << std::endl;
+  ignoreUnused(radiusNumber);
+  std::cout << "good to go #4!" << std::endl;
+  ignoreUnused(radiusInput);
+  std::cout << "good to go #5!" << std::endl;
+  ignoreUnused(evenNumber);
+  std::cout << "good to go #6!" << std::endl;
+  ignoreUnused(numDoubleInput);
+  std::cout << "good to go #7!" << std::endl;
+  ignoreUnused(didDogWakeUp);
+  std::cout << "good to go #8!" << std::endl;
+  ignoreUnused(daysInput);
+  std::cout << "good to go #9!" << std::endl;
+  ignoreUnused(lastLetter);
+  std::cout << "good to go #10!" << std::endl;
   return 0;
 }
