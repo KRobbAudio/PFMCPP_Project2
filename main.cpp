@@ -112,29 +112,87 @@ bool rentACar(
              // {};' at the end of it.
 }
 
-/*
- 1)
- */
+// 1)
+bool isNumber (
+    int num) 
+{
+    ignoreUnused(num);
 
-/*
- 2)
- */
+    return {};
 
-/*
- 3)
- */
+}
 
-/*
- 4)
- */
 
-/*
- 5)
- */
+// 2) 
+int calculateArea (
+    int length,
+    int width = 10)
+{
+    ignoreUnused(length, width);
 
-/*
- 6)
- */
+    return {};
+}
+
+
+
+// 3) 
+char getFirstLetter (
+    char a)
+{
+    ignoreUnused(a);
+
+    return {};   
+}
+
+// 4)
+float calculateCircumference (
+    float radius,
+    float pi = 3.141593f)
+{
+
+    ignoreUnused(radius, pi);
+
+    return {}; 
+}
+
+float getRadius (
+    float enterRadius)
+{
+
+    ignoreUnused(enterRadius);
+
+    return {}; 
+    
+}
+
+// 5)
+bool isEven (
+    int num)
+{
+
+    ignoreUnused(num);
+
+    return {}; 
+
+}
+
+
+// 6)
+double evaluateExpression (
+    double num1, 
+    double num2)
+{
+
+    ignoreUnused(num1, num2);
+
+    return {}; 
+}
+
+
+
+
+
+ 
 
 /*
  7)
